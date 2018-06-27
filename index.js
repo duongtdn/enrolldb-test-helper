@@ -72,6 +72,7 @@ module.exports = {
         });
       } else {
         console.log('ENROLL Table already exists')
+        done && done();
         return this;
       }
     } else {
