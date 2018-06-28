@@ -10,14 +10,14 @@ const db = {
 }
 
 const enroll01 = { 
-  uid: 'tester@team.com', 
+  uid: 'tester-uid', 
   courseId: 'emb-01', 
   detail: { status : 'active' }, 
   price: 500 
 };
 
 const enroll02 = { 
-  uid: 'tester@team.com', 
+  uid: 'tester-uid', 
   courseId: 'emb-02', 
   detail: { status : 'billing' }, 
   price: 500 
