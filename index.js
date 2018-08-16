@@ -9,20 +9,6 @@ const db = {
   port: null
 }
 
-const enroll01 = { 
-  uid: 'tester-uid', 
-  courseId: 'emb-01', 
-  detail: { status : 'active' }, 
-  price: 500 
-};
-
-const enroll02 = { 
-  uid: 'tester-uid', 
-  courseId: 'emb-02', 
-  detail: { status : 'billing' }, 
-  price: 500 
-};
-
 module.exports = {
 
   _dbready: false,
@@ -90,7 +76,8 @@ module.exports = {
           console.log('Failed to create ENROLL table')
           console.log(err);
         } else {  
-          this._createNewEntries(done);
+          // this._createNewEntries(done);
+          done && done();
         }
       })
     } else {
@@ -116,7 +103,8 @@ module.exports = {
               console.log('Failed to create ENROLL table')
               console.log(err);
             } else {  
-              self._createNewEntries();
+              // self._createNewEntries(done);
+              done && done();
             }
           })
         }
@@ -142,8 +130,8 @@ module.exports = {
   _createNewEntries(done) {
     console.log('Creating new enrollments...')  
     Promise.all([
-      this._createNewEntry(enroll01), 
-      this._createNewEntry(enroll02),
+      // this._createNewEntry(enroll01), 
+      // this._createNewEntry(enroll02),
     ]).then(values => {
       console.log('Created all enrollments.')
       done && done();
